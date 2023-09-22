@@ -1,0 +1,19 @@
+AppAdmin:
+    resource:
+        path: ../src/AppAdmin/Controller/
+        namespace: App\AppAdmin\Controller
+    type: attribute
+    prefix: '/app'
+AppUser:
+    resource:
+        path: ../src/AppUser/Controller/
+        namespace: App\AppUser\Controller
+    type: attribute
+
+api_login_check:
+    path: /login_check
+
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }

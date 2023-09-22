@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+
+        <entity name="App\AppUser\Domain\User\User"
+                    repository-class="App\AppUser\Infrastructure\Doctrine\User\UserDoctrineRepository"
+                    table="user">
+                <id name="_id" type="integer" column="id">
+                    <generator strategy="IDENTITY"/>
+                </id>
+                <field name="_email" column="email" type="string" column-definition="VARCHAR(255) NOT NULL" />
+                <field name="_password" column="password" type="string" column-definition="VARCHAR(255) NOT NULL" />
+                <field name="_roles" column="roles" type="json" column-definition="VARCHAR(255) NULL" />
+                <field name="_uuid" column="uuid" type="string" column-definition="VARCHAR(255) NOT NULL"/>
+                <field name="_lang" column="lang" type="string" column-definition="VARCHAR(4) NOT NULL"/>
+        </entity>
+</doctrine-mapping>
